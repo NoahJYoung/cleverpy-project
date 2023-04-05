@@ -1,0 +1,30 @@
+.postFeed {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .postFeed {
+        padding: 1rem;
+    }
+
+    .postFeed::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    .postFeed::-webkit-scrollbar-thumb {
+        background-color: rgba(175, 175, 175, 0.25);
+        border-radius: 20px;
+    }
+
+    .postFeed.active::-webkit-scrollbar-thumb {
+        background-color: rgba(175, 175, 175, 0.75);
+        border-radius: 20px;
+    }
+
+    .postFeed::-webkit-scrollbar-track {
+        display: none;
+    }
+}

@@ -1,0 +1,30 @@
+.commentFormContainer {
+    width: 80%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+
+    .buttonContainer {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+
+    input,
+    input:hover,
+    input:focus {
+        margin-bottom: 0.5rem;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+    }
+
+    .body,
+    body:hover {
+        resize: none;
+        min-height: 8rem;
+        border: 1px solid #ccc;
+    }
+}
