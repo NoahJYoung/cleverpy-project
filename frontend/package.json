@@ -9,10 +9,12 @@
   },
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "antd": "^5.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@nrwl/cypress": "15.9.2",

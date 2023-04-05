@@ -2,9 +2,9 @@ import Axios from 'axios';
 import { RequestUrlList } from '../../RequestUrlList';
 
 
-export const getAll = async () => {
+export const getById = async (userId: number) => {
 	try {
-		const res = await Axios.get(RequestUrlList.POSTS);
+		const res = await Axios.get(`${RequestUrlList.USERS}/${userId}`);
 		if (res) {
 			return res.data;
 		}

@@ -1,5 +1,7 @@
 const baseUrl = 'https://jsonplaceholder.typicode.com';
 
 export enum RequestUrlList {
-    getAllPosts = `${baseUrl}/posts`,
+    POSTS = `${baseUrl}/posts`,
+    USERS = `${baseUrl}/users`,
+    COMMENTS = `${baseUrl}/comments`,
 }

@@ -1,0 +1,13 @@
+.postButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .buttonsSection {
+        display: flex;
+    }
+
+    .buttonIcon {
+        font-size: 1.1rem;
+    }
+}

@@ -3,23 +3,25 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from 'antd';
 import { Feed } from './pages';
 
+import styles from './App.module.scss';
+
 const { Header, Content, Footer } = Layout;
 
 function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header>
+      <div className={`App ${styles.App}`}>
+        <Header className={styles.header}>
           <div>HEADER</div>
         </Header>
-        <Content>
+        <Content className={styles.content}>
           <Routes>
             <Route path='/' element={<Navigate to='/feed' />} />
             <Route path='/feed' element={<Feed />} />
           </Routes>
         </Content>
-        <Footer>
+        <Footer className={styles.footer}>
           <div>FOOTER</div>
         </Footer>
       </div>

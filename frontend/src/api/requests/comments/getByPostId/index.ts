@@ -1,0 +1,1 @@
+export { getByPostId } from './getByPostId';

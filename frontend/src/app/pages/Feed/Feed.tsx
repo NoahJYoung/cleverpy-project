@@ -3,6 +3,8 @@ import { API } from 'src/api';
 import { PostData } from 'src/api/requests/posts';
 import { Post } from './components';
 
+import styles from './Feed.module.scss';
+
 interface FeedProps {
 
 }
@@ -19,7 +21,7 @@ export function Feed() {
 	}, []);
 
 	return (
-		<div>
+		<div className={styles.postFeed}>
 			{posts.map((post) => <Post key={post.id} postData={post} />)}
 		</div>
 	)
