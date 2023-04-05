@@ -16,7 +16,7 @@ interface PostProps {
 export function Post({ postData }: PostProps) {
 	const [showComments, setShowComments] = useState(false);
 	const { title, body, userId, id } = postData;
-	const { userData, postComments } = useFetchPostData(id, userId);
+	const { userData, postComments, setPostComments } = useFetchPostData(id, userId);
 
 	const toggleShowComments = useCallback(() => {
 		setShowComments(!showComments);
@@ -30,7 +30,12 @@ export function Post({ postData }: PostProps) {
 				<Paragraph>{body}</Paragraph>
 				<PostButtons toggleShowComments={toggleShowComments} numComments={postComments.length} />
 			</Card>
-			<CommentSection showComments={showComments} comments={postComments} />
+			<CommentSection
+				postId={id}
+				showComments={showComments}
+				comments={postComments}
+				setPostComments={setPostComments}
+			/>
 			<Divider />
 		</>
 	) : null;

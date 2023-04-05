@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { notification } from 'antd';
 import { RequestUrlList } from '../../RequestUrlList';
 
 
@@ -9,6 +10,9 @@ export const getByPostId = async (postId: number) => {
             return res.data;
         }
     } catch (error) {
-        console.error(error);
+        notification.error({
+            message: 'Error!',
+            description: 'Error fetching comments'
+        })
     }
 }

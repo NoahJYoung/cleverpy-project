@@ -1,6 +1,7 @@
 import React from 'react';
-import { Typography, Avatar } from 'antd';
+import { Typography, Avatar, Popover } from 'antd';
 import { Link } from 'react-router-dom';
+import { UserOverlay } from './components';
 import { UserData } from 'src/api/requests/users';
 import { UserOutlined } from '@ant-design/icons';
 
@@ -17,7 +18,9 @@ export function PostHeader({ userData, postTitle }: PostHeaderProps) {
 	const { username, id } = userData;
 	return (
 		<div className={styles.headerContainer}>
-			<Avatar className={styles.icon} icon={<UserOutlined />} />
+			<Popover content={<UserOverlay userData={userData} />}>
+				<Avatar className={styles.icon} icon={<UserOutlined />} />
+			</Popover>
 			<div className={styles.vertical}>
 				<Text className={styles.postTitle}>{postTitle}</Text>
 				<Link to={`profileRoute/${id}`} className={styles.username}>{username}</Link>
