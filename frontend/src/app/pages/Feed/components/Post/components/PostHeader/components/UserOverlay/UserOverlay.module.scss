@@ -1,0 +1,22 @@
+.overlayContainer {
+
+    .overlayContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .username {
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    .divider {
+        margin-top: 0;
+    }
+
+    .label {
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+}

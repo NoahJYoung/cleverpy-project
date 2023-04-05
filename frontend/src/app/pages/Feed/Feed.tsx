@@ -1,27 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import { API } from 'src/api';
-import { PostData } from 'src/api/requests/posts';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useInfiniteScroll } from './hooks';
 import { Post } from './components';
 
 import styles from './Feed.module.scss';
 
-interface FeedProps {
-
-}
-
 export function Feed() {
-	const [posts, setPosts] = useState<PostData[]>([]);
+	const { posts, setRecordCount } = useInfiniteScroll();
+	const [active, setActive] = useState(false);
+	const containerRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		const fetchPosts = async () => {
-			const res = await API.posts.getAll();
-			res && setPosts(res);
+	const handleScroll = useCallback(() => {
+		const container = containerRef.current;
+		if (container) {
+			const isScrolledToBottom =
+				container.scrollTop + container.clientHeight >= container.scrollHeight;
+			if (isScrolledToBottom) {
+				setRecordCount((prevRecordCount) => prevRecordCount + 10);
+			}
 		}
-		fetchPosts();
 	}, []);
 
+	const handleSetActive = useCallback(() => {
+		setActive(true);
+	}, [active, setActive]);
+
+	const handleSetInactive = useCallback(() => {
+		setActive(false);
+	}, [active, setActive])
+
+	useEffect(() => {
+		const container = containerRef.current;
+		if (container) {
+			container.addEventListener("scroll", handleScroll);
+		}
+		return () => {
+			if (container) {
+				container.removeEventListener("scroll", handleScroll);
+			}
+		};
+	}, [handleScroll]);
+
 	return (
-		<div className={styles.postFeed}>
+		<div
+			ref={containerRef}
+			className={`${styles.postFeed} ${active ? styles.active : ''}`}
+			onMouseEnter={handleSetActive}
+			onMouseLeave={handleSetInactive}
+		>
 			{posts.map((post) => <Post key={post.id} postData={post} />)}
 		</div>
 	)

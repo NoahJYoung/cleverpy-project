@@ -23,7 +23,8 @@ export function useFetchPostData(postId: number, userId: number) {
 
 	return {
 		userData,
-		postComments
+		postComments,
+		setPostComments,
 	}
 
 }
