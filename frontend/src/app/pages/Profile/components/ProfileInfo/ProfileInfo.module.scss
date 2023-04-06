@@ -1,0 +1,49 @@
+.profileInfoCard {
+    width: 90vw;
+    max-width: 700px;
+
+    .cardHeader {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .avatar {
+            height: 4rem;
+            width: 4rem;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .username {
+            margin: 0;
+        }
+    }
+
+    .subDivider {
+        margin: 0.25rem;
+    }
+
+    .userInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.5rem;
+
+        .infoItem {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+
+            .infoLabel {
+                font-size: 0.75rem;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .companyInfo {
+        display: flex;
+        flex-direction: column;
+    }
+}

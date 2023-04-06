@@ -4,7 +4,7 @@ import { API } from "src/api";
 import { postsState } from "src/app/state";
 
 /*
-    If the backend were prepared to handle paginated queries, this would be the place to apply that logic.
+    If the backend were prepared to handle paginated queries, this is where I would to apply that logic.
 */
 
 export const useInfiniteScroll = () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography, Avatar, Popover } from 'antd';
+import { RoutePaths } from 'src/app/globalTypes';
 import { Link } from 'react-router-dom';
 import { UserOverlay } from './components';
 import { UserData } from 'src/api/requests/users';
@@ -23,7 +24,7 @@ export function PostHeader({ userData, postTitle }: PostHeaderProps) {
 			</Popover>
 			<div className={styles.vertical}>
 				<Text className={styles.postTitle}>{postTitle}</Text>
-				<Link to={`profileRoute/${id}`} className={styles.username}>{username}</Link>
+				<Link to={`${RoutePaths.PROFILE}/${id}`} className={styles.username}>{username}</Link>
 			</div>
 		</div>
 	)
