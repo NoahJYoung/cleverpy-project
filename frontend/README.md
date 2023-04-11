@@ -7,7 +7,7 @@ English:
 
   -cd frontend
   -npm install
-  -npm run
+  -npm start
   -navigate to http://localhost:4200/
 
 
@@ -28,7 +28,7 @@ Español:
 
 -cd frontend
 -npm install
--npm run
+-npm start
 -navegar a http://localhost:4200/
 
 Para ingresar a la aplicación, cree una nueva cuenta o inicie sesión con las siguientes credenciales:
