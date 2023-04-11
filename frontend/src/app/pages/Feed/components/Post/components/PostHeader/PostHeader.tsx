@@ -13,9 +13,10 @@ const { Text } = Typography;
 interface PostHeaderProps {
 	postTitle: string
 	userData: UserData
+	isCurrentUserPost?: boolean
 }
 
-export function PostHeader({ userData, postTitle }: PostHeaderProps) {
+export function PostHeader({ userData, postTitle, isCurrentUserPost }: PostHeaderProps) {
 	const { username, id } = userData;
 	return (
 		<div className={styles.headerContainer}>
@@ -24,7 +25,11 @@ export function PostHeader({ userData, postTitle }: PostHeaderProps) {
 			</Popover>
 			<div className={styles.vertical}>
 				<Text className={styles.postTitle}>{postTitle}</Text>
-				<Link to={`${RoutePaths.PROFILE}/${id}`} className={styles.username}>{username}</Link>
+				{isCurrentUserPost ? (
+					<Text>{username}</Text>) : (
+					<Link to={`${RoutePaths.PROFILE}/${id}`} className={styles.username}>{username}</Link>
+				)}
+
 			</div>
 		</div>
 	)

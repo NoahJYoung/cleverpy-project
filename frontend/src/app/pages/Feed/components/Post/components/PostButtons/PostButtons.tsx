@@ -7,11 +7,12 @@ import styles from './PostButtons.module.scss';
 const { Text } = Typography;
 
 interface PostButtonsProps {
-	numComments: number
-	toggleShowComments: () => void
+	numComments: number,
+	showComments: boolean,
+	toggleShowComments: () => void,
 }
 
-export function PostButtons({ numComments, toggleShowComments }: PostButtonsProps) {
+export function PostButtons({ numComments, toggleShowComments, showComments }: PostButtonsProps) {
 	const [userLikesPost, setUserLikesPost] = useState(false);
 	const [numLikes, setNumLikes] = useState(0);
 
@@ -37,7 +38,11 @@ export function PostButtons({ numComments, toggleShowComments }: PostButtonsProp
 			</div>
 
 			<div className={styles.buttonSection}>
-				<Button onClick={toggleShowComments} type='text' icon={<CommentOutlined className={styles.buttonIcon} />} />
+				<Button
+					onClick={toggleShowComments}
+					type='text'
+					icon={<CommentOutlined className={`${styles.buttonIcon} ${showComments ? styles.commentButtonActive : ''}`} />}
+				/>
 				<Text>{numComments}</Text>
 			</div>
 

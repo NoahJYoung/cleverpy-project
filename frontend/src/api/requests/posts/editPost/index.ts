@@ -1,0 +1,1 @@
+export { editPost } from './editPost';

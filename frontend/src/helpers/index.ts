@@ -1,0 +1,1 @@
+export { mockedUser } from './mockedUser';

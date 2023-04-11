@@ -1,1 +1,1 @@
-export { useInfiniteScroll } from './useInfiniteScroll';
+export { useLoadPosts } from './useLoadPosts';
