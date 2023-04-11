@@ -1,0 +1,17 @@
+.loginPageContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .signInCard {
+        width: 90vw;
+        max-width: 350px;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

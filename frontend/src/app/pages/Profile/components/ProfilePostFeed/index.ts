@@ -1,0 +1,1 @@
+export { ProfilePostFeed } from './ProfilePostFeed';

@@ -1,5 +1,15 @@
 .postCard {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 800px;
+
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .controlPanel {
+            display: flex;
+        }
+    }
 }

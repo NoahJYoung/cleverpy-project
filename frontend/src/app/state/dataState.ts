@@ -7,6 +7,11 @@ export const postsState = atom<PostData[]>({
 	default: [],
 });
 
+export const userPostsState = atom<PostData[]>({
+	key: 'userPosts',
+	default: [],
+})
+
 export const currentUserState = atom<UserData | null>({
 	key: 'currentUser',
 	default: null,
